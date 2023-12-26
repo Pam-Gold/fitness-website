@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+*{
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hamburgerMenu div{
+height: 5px;
+width: 100%;
+background: white;
+border-radius: 10px;
+}
+
+
+
+
+.form{
+height: fit-content;
+align-items: center;
+background-color: white;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+padding: 25px 15px;
+row-gap: 30px;
+}
+
+@media screen and (max-width:480px) {
+ .form{
+  min-width: 80%;
+ } 
+}
+@media screen and (min-width:481px) and (max-width:767px) {
+  .form{
+    min-width: 80%;
+   } 
+}
+@media screen and (min-width:768px) and (max-width:1279px) {
+  .form{
+    width: 400px;
+   } 
+}
+@media screen and (min-width:1280px) {
+  .form{
+    width: 400px;
+   } 
 }

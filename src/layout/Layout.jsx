@@ -14,6 +14,7 @@ const [user, setUser] = useState({
   userName:"",
   email:"",
   password:"",
+  img:"",
   toggle:false,
   account:false
 

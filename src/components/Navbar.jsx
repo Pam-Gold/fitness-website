@@ -168,18 +168,28 @@ const Navbar = () => {
           columnGap="15px"
           className="navbarMenu"
           sx={navbarStyles}
+          zIndex="99"
+
         >
           <ListItem sx={navbarMenuStyles}>
-            <NavLink>About Us</NavLink>
+            <NavLink to="aboutus" onClick={renderNavbar}>
+              About Us
+            </NavLink>
           </ListItem>
           <ListItem sx={navbarMenuStyles}>
-            <NavLink>Programs</NavLink>
+            <NavLink to="programs" onClick={renderNavbar}>
+              Programs
+            </NavLink>
           </ListItem>
           <ListItem sx={navbarMenuStyles}>
-            <NavLink>Membership</NavLink>
+            <NavLink to="membership" onClick={renderNavbar}>
+              Membership
+            </NavLink>
           </ListItem>
           <ListItem sx={navbarMenuStyles}>
-            <NavLink>Testimonials</NavLink>
+            <NavLink to="testimonials" onClick={renderNavbar}>
+              Testimonials
+            </NavLink>
           </ListItem>
         </List>
 
@@ -196,9 +206,9 @@ const Navbar = () => {
           )}
 
           {user[0].account && (
-            <Link>
-              <Flex h="40px" w="40px" bg="white" borderRadius="10px">
-                <Img />
+            <Link to="account">
+              <Flex h="40px" w="40px">
+                <Img src={user[0].img} h="100%" w="100%"  borderRadius="50%"/>
               </Flex>
             </Link>
           )}
@@ -244,7 +254,7 @@ const Navbar = () => {
               ></i>
             </Button>
 
-            {!switchForm && (
+            {switchForm && (
               <form
                 action=""
                 className="form form-signin"
@@ -292,7 +302,7 @@ const Navbar = () => {
               </form>
             )}
             {/*  */}
-            {switchForm && (
+            {!switchForm && (
               <form
                 action=""
                 className="form form-signup"
@@ -331,7 +341,7 @@ const Navbar = () => {
                   w="100%"
                   type="submit"
                 >
-                  Sign In
+                  Sign Up
                 </Button>
 
                 <Text fontWeight="bold">

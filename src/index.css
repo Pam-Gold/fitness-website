@@ -32,6 +32,25 @@ row-gap: 30px;
   border-color: grey;
 }
 
+.edit-form input{
+  margin-bottom: 50px;
+  border: 1.5px solid dimgrey;
+
+}
+
+
+
+input::-webkit-file-upload-button{
+  border: none;
+  background: lightcoral;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+
+
+
 @media screen and (max-width:480px) {
  .form{
   min-width: 80%;

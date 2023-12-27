@@ -20,6 +20,8 @@ import reviewDb from "../data/reviewDb";
 
 import Review from "../components/Review";
 
+import Footer from "../components/Footer";
+
 const Home = () => {
 
 
@@ -588,6 +590,8 @@ We are here to help and guide you to make the best decision for your
           <Review />
         </Flex>
       </Flex>
+
+<Footer/>
 
  </Grid>
   )

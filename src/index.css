@@ -27,6 +27,11 @@ padding: 25px 15px;
 row-gap: 30px;
 }
 
+.form input{
+  border: 1.5px solid;
+  border-color: grey;
+}
+
 @media screen and (max-width:480px) {
  .form{
   min-width: 80%;

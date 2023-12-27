@@ -17,7 +17,7 @@ import "../index.css";
 import "../assets/icons/fontawesome/css/fontawesome.min.css";
 import "../assets/icons/fontawesome/css/all.min.css";
 
-import logo from '../assets/logo/weights.jpg'
+import logo from "../assets/logo/weights.jpg";
 
 import useToggle from "../hooks/useToggle";
 
@@ -75,64 +75,60 @@ const Navbar = () => {
 
   const [switchForm, toggleFormSwitch] = useToggle();
 
-
-
   //  Handle Form Changes
 
   const handleSignInChanges = (evt) => {
-    const {name, value} = evt.target;
+    const { name, value } = evt.target;
 
+    user[1]((prev) => ({
+      ...prev,
+      [name]: value,
+      toggle: true,
+      account: true,
+    }));
 
-    
-    user[1](prev=>({...prev, [name]:value, toggle:true, account:true}))
+    console.log(user[0]);
+  };
 
-    console.log(user[0])
-
-  }
-  
   const handleSignUpChanges = (evt) => {
-    const {name, value} = evt.target;
+    const { name, value } = evt.target;
 
+    user[1]((prev) => ({
+      ...prev,
+      [name]: value,
+      toggle: true,
+      account: true,
+    }));
 
-    
-    user[1](prev=>({...prev, [name]:value, toggle:true, account:true}))
+    console.log(user[0]);
+  };
 
-    console.log(user[0])
-
-  }
-
-  // 
+  //
 
   const handleSignUp = () => {
-    if(user[0].userName === ""){
-alert("Insufficient Characters")
-    }
-    else if(user[0].email === ""){
-alert("Invalid Email")
-    }
-    else if(user[0].password.length < 8){
-      alert("Insufficient Characters")
-    }
-    else{
-alert("Account Created")
+    if (user[0].userName === "") {
+      alert("Insufficient Characters");
+    } else if (user[0].email === "") {
+      alert("Invalid Email");
+    } else if (user[0].password.length < 8) {
+      alert("Insufficient Characters");
+    } else {
+      alert("Account Created");
 
-renderForm()
+      renderForm();
     }
-  }
+  };
   const handleSignIn = () => {
+    if (user[0].email === "") {
+      alert("Invalid Email");
+    } else if (user[0].password.length < 8) {
+      alert("Insufficient Characters");
+    } else {
+      alert("Successfully Signed In");
 
-     if(user[0].email === ""){
-alert("Invalid Email")
+      renderForm();
     }
-    else if(user[0].password.length < 8){
-      alert("Insufficient Characters")
-    }
-    else{
-alert("Successfully Signed In")
-
-renderForm()
-    }
-  }
+  };
 
   return (
     <Flex
@@ -146,7 +142,15 @@ renderForm()
     >
       <Box>
         <Link to="/">
-          <Img src={logo} alt="" h="40px" w="40px" borderRadius="5px" bg="white" p="3px" />
+          <Img
+            src={logo}
+            alt=""
+            h="40px"
+            w="40px"
+            borderRadius="5px"
+            bg="white"
+            p="3px"
+          />
         </Link>
       </Box>
 
@@ -241,10 +245,28 @@ renderForm()
             </Button>
 
             {!switchForm && (
-              <form action="" className="form form-signin" onSubmit={handleSignIn}>
+              <form
+                action=""
+                className="form form-signin"
+                onSubmit={handleSignIn}
+              >
                 <Heading>Welcome Back</Heading>
-                <Input type="text" h="50px" placeholder="Email" name="email"  onChange={handleSignInChanges} value={user[0].email} />
-                <Input type="text" h="50px" placeholder="Password" name="password"  onChange={handleSignInChanges} value={user[0].password} />
+                <Input
+                  type="text"
+                  h="50px"
+                  placeholder="Email"
+                  name="email"
+                  onChange={handleSignInChanges}
+                  value={user[0].email}
+                />
+                <Input
+                  type="text"
+                  h="50px"
+                  placeholder="Password"
+                  name="password"
+                  onChange={handleSignInChanges}
+                  value={user[0].password}
+                />
                 <Button
                   bg="red.400"
                   h="50px"
@@ -271,11 +293,36 @@ renderForm()
             )}
             {/*  */}
             {switchForm && (
-              <form action="" className="form form-signup" onSubmit={handleSignUp}>
+              <form
+                action=""
+                className="form form-signup"
+                onSubmit={handleSignUp}
+              >
                 <Heading>Create Account</Heading>
-                <Input type="text" h="50px" placeholder="Username" name="userName" onChange={handleSignUpChanges} value={user[0].userName} />
-                <Input type="text" h="50px" placeholder="Email" name="email"  onChange={handleSignUpChanges} value={user[0].email}/>
-                <Input type="text" h="50px" placeholder="Password" name="password"  onChange={handleSignUpChanges} value={user[0].password}/>
+                <Input
+                  type="text"
+                  h="50px"
+                  placeholder="Username"
+                  name="userName"
+                  onChange={handleSignUpChanges}
+                  value={user[0].userName}
+                />
+                <Input
+                  type="text"
+                  h="50px"
+                  placeholder="Email"
+                  name="email"
+                  onChange={handleSignUpChanges}
+                  value={user[0].email}
+                />
+                <Input
+                  type="text"
+                  h="50px"
+                  placeholder="Password"
+                  name="password"
+                  onChange={handleSignUpChanges}
+                  value={user[0].password}
+                />
                 <Button
                   bg="red.400"
                   h="50px"

@@ -25,7 +25,9 @@ const Account = () => {
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          gap="10px"
+          gap="35px"
+          fontSize="1rem"
+          fontWeight="bold"
         >
           <ListItem>
             <Link to="account/edit-profile">Edit Profile</Link>

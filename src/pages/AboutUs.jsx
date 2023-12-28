@@ -23,7 +23,7 @@ const AboutUs = () => {
   We are a company established in 2003, Our main goal is to offer a diverse range of high-quality fitness programs and equipment, coupled with expert guidance from certified trainers. We strive to inspire and educate our members on the importance of physical activity, nutition and overall wellness.
 </Text>
 
-<Img h={{base:"300px", sm:"300px", md:"300px", lg:"400px", xl:"400px"}} w={{base:"100%", sm:"100%", md:"100%", lg:"600px", xl:"600px"}}/>
+<Img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGZpdG5lc3N8ZW58MHx8MHx8fDA%3D" h={{base:"300px", sm:"300px", md:"300px", lg:"400px", xl:"400px"}} w={{base:"100%", sm:"100%", md:"100%", lg:"600px", xl:"600px"}}/>
       </Flex>
 
       <Footer/>

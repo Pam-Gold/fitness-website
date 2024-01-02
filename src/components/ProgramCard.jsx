@@ -18,6 +18,8 @@ const ProgramCard = (props) => {
     borderRadius= "15px"
     justify="space-between"
     p="10px"
+
+sx={props.sx}
     >
 
 

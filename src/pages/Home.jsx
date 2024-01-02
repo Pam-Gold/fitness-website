@@ -12,7 +12,7 @@ import joinUsBackground from '../assets/images/home-section/joinUs.webp'
 
 import whyUsBackground from '../assets/images/home-section/header2.webp'
 
-import program from "../data/program";
+import program from "../data/featuredPrograms";
 
 import ProgramCard from "../components/ProgramCard";
 

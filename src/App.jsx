@@ -29,11 +29,6 @@ import Membership from "./pages/Membership";
 
 import Testimonials from "./pages/Testimonials";
 
-// Account
-
-import Account from "./components/Account";
-
-import Personalization from "./pages/profile/Personalization";
 
 
 // 404
@@ -49,6 +44,7 @@ import BasicYoga from "./pages/programs/BasicYoga";
 import BodyBuilding from "./pages/programs/BodyBuilding";
 
 import WeightLoss from "./pages/programs/WeightLoss";
+import Contact from "./pages/Contact";
 
 
 // Router
@@ -60,15 +56,9 @@ const router = createBrowserRouter(
       <Route path="programs" element={<Programs/>} />
       <Route path="membership" element={<Membership/>} />
       <Route path="testimonials" element={<Testimonials/>} />
-
-<Route path="account" element={<AccountLayout/>}>
-<Route index element={<Account/>}/>
-<Route path="account/edit-profile" element={<Personalization/>}  />
-<Route/>
-<Route/>
+      <Route path="contact" element={<Contact/>} />
 
 
-</Route>
 
 <Route path="programs" element={<ProgramLayout/>}/>
 <Route path="strength-training" element={<StrengthTraining/>}/>

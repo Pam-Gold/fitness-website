@@ -37,7 +37,7 @@ const Programs = () => {
           {programElement}
           
         </Grid>
-   <Heading as="h3" display="flex" alignItems="center" fontSize="1.5rem" alignSelf="center"> <Link >More Programs <i className="fa-solid fa-arrow-right"></i></Link></Heading>
+   <Heading as="h3" display="flex" alignItems="center" fontSize="1.5rem" alignSelf="center"> <Link to="/more-programs" >More Programs <i className="fa-solid fa-arrow-right"></i></Link></Heading>
       </Flex>
 
 <Flex>

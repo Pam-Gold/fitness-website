@@ -186,11 +186,7 @@ const Navbar = () => {
               Membership
             </NavLink>
           </ListItem>
-          <ListItem sx={navbarMenuStyles}>
-            <NavLink to="testimonials" onClick={renderNavbar}>
-              Testimonials
-            </NavLink>
-          </ListItem>
+     
           <ListItem sx={navbarMenuStyles}>
             <NavLink to="contact" onClick={renderNavbar}>
               Contact

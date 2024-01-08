@@ -46,6 +46,8 @@ import BodyBuilding from "./pages/programs/BodyBuilding";
 import WeightLoss from "./pages/programs/WeightLoss";
 import Contact from "./pages/Contact";
 
+import MorePrograms from "./pages/programs/MorePrograms";
+
 
 // Router
 const router = createBrowserRouter(
@@ -65,6 +67,7 @@ const router = createBrowserRouter(
 <Route path="basic-yoga" element={<BasicYoga/>}/>
 <Route path="body-building" element={<BodyBuilding/>}/>
 <Route path="weight-loss" element={<WeightLoss/>}/>
+<Route path="more-programs" element={<MorePrograms/>}/>
 </Route>
 
 

@@ -20,9 +20,9 @@ const Programs = () => {
   const programElement = program.map(program=><ProgramCard sx={ gridItemStyles} {...program} />)
 
   return (
-    <Flex h="fit-content" w="100%" flexDirection="column" rowGap="35px" p="8px">
+    <Flex h="fit-content" w="100%" flexDirection="column" rowGap="35px" >
 
-      <Flex flexDirection="column" rowGap="35px">
+      <Flex flexDirection="column" rowGap="35px" p="8px">
       <Heading>Explore Life Changing Programs</Heading>
       <Text>
         Embark on a transformative fitness journey with our comprehensive
@@ -30,7 +30,7 @@ const Programs = () => {
       </Text>
       </Flex>
       
-      <Flex flexDirection="column" rowGap="25px">
+      <Flex flexDirection="column" rowGap="25px" p="5px">
         <Heading>Our Featured Programs</Heading>
         <Grid  gap="20px" gridTemplateColumns={{base:"1fr", sm:"1fr", md:"2fr", lg:"1fr 1fr 1fr", xl:"1fr 1fr 1fr 1fr"}} gridTemplateRows={{base:"300px 300px 300px 300px ", sm:"300px 300px 300px 300px", md:"300px 300px 300px 300px", lg:"300px 300px", xl:"300px "}}>
 

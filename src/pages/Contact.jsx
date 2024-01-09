@@ -2,7 +2,7 @@ import { useRef } from "react"
 
 import emailjs from '@emailjs/browser'
 
-import { Flex, Heading, Img, Text, Accordion, AccordionItem, AccordionPanel, AccordionButton, AccordionIcon, Spacer } from "@chakra-ui/react";
+import { Flex, Heading, Img, Text, Accordion, AccordionItem, AccordionPanel, AccordionButton, AccordionIcon, Spacer, Box } from "@chakra-ui/react";
 
 import '../index.css'
 
@@ -28,12 +28,12 @@ const Contact = () => {
 
 
   return(
-<Flex h="fit-content" w="100%" padding="10px" flexDirection="column" gap="25px" align="center">
+<Flex h="fit-content" w="100%" flexDirection="column" gap="25px" align="center">
 
 <Flex h="fit-content" w="100%" flexDirection={{base:"column", sm:"column", md:"column", lg:"row", xl:"row"}}  justify="space-between" gap="35px" >
-  <Flex h={{base:"50%", sm:"50%", md:"50%", lg:"100%", xl:"100%"}} w={{base:"100%", sm:"100%", md:"100%", lg:"50%", xl:"50%"}} flexDirection="column" justify="center" align="center" rowGap="30px">
+  <Flex h={{base:"50%", sm:"50%", md:"50%", lg:"100%", xl:"100%"}} w={{base:"100%", sm:"100%", md:"100%", lg:"50%", xl:"50%"}} flexDirection="column" justify="center" align="center" rowGap="30px" p="8px">
 
-<Flex flexDirection="column" rowGap="10px" >
+<Flex flexDirection="column" rowGap="10px" p="8px">
 <Heading fontSize="2rem" mb="35px">Get in touch</Heading>
 
 <Heading as="h4" fontSize="1.2rem">Send a Message</Heading>
@@ -58,16 +58,16 @@ const Contact = () => {
   <Flex h={{base:"50%", sm:"50%", md:"50%", lg:"100%", xl:"100%"}} w={{base:"100%", sm:"100%", md:"100%", lg:"50%", xl:"50%"}} flexDirection="column" rowGap="50px">
 
 
-<Flex flexDirection="column" rowGap="10px">
+<Flex flexDirection="column" rowGap="10px" p="8px">
 <Heading fontSize="1.8rem">Call Us</Heading>
 <Text>Feel free to call us to book a private training or session </Text>
 <Flex columnGap="5px" align="center"> <i className="fa-solid fa-phone"></i> <Text>(+234)903-188-9024</Text></Flex>
 </Flex>
 {/*  */}
-<Flex flexDirection="column" rowGap="10px">
+<Flex flexDirection="column" rowGap="10px" p="8px">
 <Heading fontSize="1.8rem">Visit Us</Heading>
 <Text>We have several branches, but you can stop by our HQ</Text>
-<Flex columnGap="5px" align="center"> <i className="fa-solid fa-location"></i> <Text>1234 Hilton drive </Text></Flex>
+<Flex columnGap="5px" align="center"> <i className="fa-solid fa-location-dot"></i> <Text>1234 Hilton drive </Text></Flex>
 </Flex>
 
 
@@ -75,11 +75,11 @@ const Contact = () => {
 </Flex>
 
 
-<Flex h={{base:"600px", sm:"600px", md:"600px", lg:"400px", xl:"400px"}} w={{base:"100%", sm:"100%", md:"100%", lg:"700px", xl:"700px"}} justifyContent="center" alignItems="center" gap="25px">
-<Img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" h="100%" w="100%"/>
+<Flex h={{base:"400px", sm:"400px", md:"400px", lg:"400px", xl:"400px"}} w={{base:"100%", sm:"100%", md:"100%", lg:"700px", xl:"700px"}} justifyContent="center" alignItems="center" gap="25px">
+<Img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" h="100%" w="100%" p="8px"/>
 </Flex>
 
-<Flex h={{base:"600px", sm:"600px", md:"600px", lg:"400px", xl:"400px"}} w="100%" flexDirection={{base:"column", sm:"column", md:"column", lg:"row", xl:"row"}}>
+<Flex h="fit-content" w="100%" flexDirection={{base:"column", sm:"column", md:"column", lg:"row", xl:"row"}}>
   <Flex h={{base:"50%", sm:"50%", md:"50%", lg:"100%", xl:"100%"}} w={{base:"100%", sm:"100%", md:"100%", lg:"50%", xl:"50%"}} flexDirection="column" gap="50px">
 
 <Heading fontSize="1rem" color="grey">FAQ</Heading>
@@ -97,8 +97,9 @@ const Contact = () => {
     <Heading >
       <AccordionButton>
         <Flex  align="center" flex='1' textAlign='left'>
-         How can I contact customer service ?<AccordionIcon/>
+         How can I contact customer service ?
         </Flex>
+        <AccordionIcon/>
       </AccordionButton>
 
     </Heading>
@@ -110,9 +111,10 @@ const Contact = () => {
   <AccordionItem>
     <Heading >
       <AccordionButton>
-        <Flex  align="center">
-         What is your Subscription policy ?<AccordionIcon/>
+        <Flex  flex="1" textAlign="left" >
+         What is your Subscription policy ?
         </Flex>
+        <AccordionIcon/>
       </AccordionButton>
 
     </Heading>
@@ -124,9 +126,10 @@ const Contact = () => {
   <AccordionItem >
     <Heading >
       <AccordionButton>
-        <Flex  align="center">
-       Do you offer trial periods for your services ?  <AccordionIcon/>
+        <Flex  align="center"  flex='1' textAlign='left'>
+       Do you offer trial periods for your services ? 
         </Flex>
+        <AccordionIcon/>
       </AccordionButton>
 
     </Heading>
@@ -138,9 +141,10 @@ Yes, we often provide trial periods for our services automatically.
   <AccordionItem >
     <Heading >
       <AccordionButton>
-        <Flex  align="center">
-          Can I provide feedback or suggestions ?<AccordionIcon/>
+        <Flex  align="center"  flex='1' textAlign='left'>
+          Can I provide feedback or suggestions ?
         </Flex>
+        <AccordionIcon/>
       </AccordionButton>
 
     </Heading>

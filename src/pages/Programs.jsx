@@ -20,7 +20,7 @@ const Programs = () => {
   const programElement = program.map(program=><ProgramCard sx={ gridItemStyles} {...program} />)
 
   return (
-    <Flex h="fit-content" w="100%" flexDirection="column" rowGap="35px" >
+    <Flex h="fit-content" w="100%" flexDirection="column" rowGap="35px">
 
       <Flex flexDirection="column" rowGap="35px" p="8px">
       <Heading>Explore Life Changing Programs</Heading>

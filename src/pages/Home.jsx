@@ -21,6 +21,7 @@ import reviewDb from "../data/reviewDb";
 import Review from "../components/Review";
 
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -492,7 +493,7 @@ We are here to help and guide you to make the best decision for your
                 <i className="fa-solid fa-close"></i> Fitness ebook
               </ListItem>
             </List>
-            <Button sx={planButtonStyle}>Choose Plan</Button>
+            <Button onClick={()=>user[1](prev=>({...prev, plan:"Basic"}))} sx={planButtonStyle}><Link to="membership">Choose Plan</Link></Button>
           </Flex>
           {/*  */}
           <Flex sx={planStyle}>
@@ -514,7 +515,7 @@ We are here to help and guide you to make the best decision for your
                 <i className="fa-solid fa-close"></i> Fitness ebook
               </ListItem>
             </List>
-            <Button sx={planButtonStyle}>Choose Plan</Button>
+            <Button onClick={()=>user[1](prev=>({...prev, plan:"Professional"}))} sx={planButtonStyle}><Link to="membership">Choose Plan</Link></Button>
           </Flex>
           {/*  */}
           <Flex sx={planStyle}>
@@ -539,7 +540,7 @@ We are here to help and guide you to make the best decision for your
                 <i className="fa-solid fa-check"></i> Extra fitness training
               </ListItem>
             </List>
-            <Button sx={planButtonStyle}>Choose Plan</Button>
+            <Button onClick={()=>user[1](prev=>({...prev, plan:"Enterprise"}))} sx={planButtonStyle}><Link to="membership">Choose Plan</Link></Button>
           </Flex>
         </Flex>
       </Flex>

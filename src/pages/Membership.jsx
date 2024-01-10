@@ -6,6 +6,8 @@ import UserProfile from "../context/UserProfile";
 
 import useToggle from "../hooks/useToggle";
 
+import Footer from "../components/Footer";
+
 const Membership = () => {
 
   const user = useContext(UserProfile);
@@ -42,12 +44,11 @@ fontSize:"16px"
 
   localStorage.setItem('date',getPurchaseDate )
   return (
-    <Flex h="100vh" w="100%">
+    <Flex h="fit-content" w="100%" flexDirection="column">
       <Flex
         h="fit-content"
         width="100%"
         flexDirection="column"
-        m="10px"
         bg="lightgray"
         borderRadius="8px"
         pos="relative"
@@ -233,6 +234,7 @@ fontSize:"16px"
         }
       </Flex>
       
+      <Footer/>
     </Flex>
   );
 };

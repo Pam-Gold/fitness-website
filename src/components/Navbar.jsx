@@ -61,6 +61,10 @@ const Navbar = () => {
     fontWeight: "bold",
   };
 
+
+
+
+
   // Navbar Toggle
 
   const [navbarToggle, renderNavbar] = useToggle();
@@ -128,6 +132,37 @@ const Navbar = () => {
 
       renderForm();
     }
+  };
+
+  const hamburgerStyles1 = {
+    h: "5px",
+    w: "100%",
+    bg: "black",
+    borderRadius: "10px",
+    transform:!navbarToggle? "rotate(0deg) translate(0, 0)" :"rotate(-45deg) translate(-4px, 7px)" ,
+    transition:"0.4s ease"
+  
+  };
+
+  const hamburgerStyles2 = {
+    h: "5px",
+    w: "100%",
+    bg: "black",
+    borderRadius: "10px",
+    opacity: !navbarToggle? 1 : 0,
+    transition:"0.4s ease"
+  
+  };
+
+  const hamburgerStyles3 = {
+    h: "5px",
+    w: "100%",
+    bg: "black",
+    borderRadius: "10px",
+    transform:!navbarToggle? "rotate(0deg) translate(0, 0)" :"rotate(45deg) translate(-7px, -10.5px)" ,
+    transition:"0.4s ease"
+  
+  
   };
 
   return (
@@ -210,9 +245,9 @@ const Navbar = () => {
             className="hamburgerMenu"
             onClick={renderNavbar}
           >
-            <Box className="bar1"></Box>
-            <Box className="bar2"></Box>
-            <Box className="bar3"></Box>
+            <Box sx={hamburgerStyles1}></Box>
+            <Box sx={hamburgerStyles2}></Box>
+            <Box sx={hamburgerStyles3}></Box>
           </Flex>
 
       

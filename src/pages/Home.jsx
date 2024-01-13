@@ -91,9 +91,13 @@ const Home = () => {
 
   const [videoModal, setVideoModal] = useState(false);
 
+const openVideo = () => {
+  setVideoModal(true)
+}
 
-
-
+const closeVideo = () => {
+  setVideoModal(false)
+}
 
   return(
  <Grid gridTemplateColumns="1fr" gridTemplateRows={{base:"800px 200px 800px ", sm:"900px 200px 600px",md:"900px 300px 700px", lg:"600px 150px 600px", xl:"600px 150px 500px"}}>
@@ -121,7 +125,7 @@ const Home = () => {
           rowGap="25px"
         >
 
-<Heading color="white" fontSize={{base:"1.8rem", sm:"2rem", md:"2.1rem", lg:"2.5rem", xl:"3.2rem"}}>Have a Fit and Healthy Body with  <span style={{ color: "lightcoral" }}>Bulck...</span></Heading>
+<Heading color="white" fontFamily=" Poppins" fontSize={{base:"1.8rem", sm:"2rem", md:"2.1rem", lg:"2.5rem", xl:"3.2rem"}}>Have a Fit and Healthy Body with  <span style={{ color: "lightcoral", fontStyle:"oblique" }}>Bulck...</span></Heading>
 
 <Text color="grey" fontSize={{base:"14px", sm:"16px", md:"16px", lg:"18px", xl:"18px"}}>
 We are here to help and guide you to make the best decision for your
@@ -144,6 +148,9 @@ We are here to help and guide you to make the best decision for your
               bg="transparent"
               color="lightgrey"
               fontSize={{base:"14px", sm:"14px", md:"1.1rem", lg:"1.3rem", xl:"1.3rem"}}
+
+              _hover={{bg:"transparent"}}
+              onClick={openVideo}
           
             >
               {" "}
@@ -560,7 +567,7 @@ We are here to help and guide you to make the best decision for your
       </Flex>
 
 <Footer/>
-<Video />
+{videoModal && <Video closeVideo={closeVideo} />}
  </Grid>
   )
 }

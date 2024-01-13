@@ -27,13 +27,20 @@ import Programs from "./pages/Programs";
 
 import Membership from "./pages/Membership";
 
-import Testimonials from "./pages/Testimonials";
 
 
+// 
+
+import UserProfile from "./context/UserProfile";
+
+import { useContext } from "react";
 
 // 404
 
 import NoPage from "./pages/NoPage";
+
+
+import Support from "./pages/help/Support";
 
 // Programs
 
@@ -57,7 +64,7 @@ const router = createBrowserRouter(
       <Route path="aboutus" element={<AboutUs />} />
       <Route path="programs" element={<Programs/>} />
       <Route path="membership" element={<Membership/>} />
-      <Route path="testimonials" element={<Testimonials/>} />
+  
       <Route path="contact" element={<Contact/>} />
 
 
@@ -68,6 +75,9 @@ const router = createBrowserRouter(
 <Route path="body-building" element={<BodyBuilding/>}/>
 <Route path="weight-loss" element={<WeightLoss/>}/>
 <Route path="more-programs" element={<MorePrograms/>}/>
+
+<Route path="support" element={<Support/>}/>
+
 </Route>
 
 

@@ -88,7 +88,7 @@ const Footer = () => {
           </Heading>
        
           <ListItem sx={footerLinkStyles}>
-            <Link to="/">Support Center</Link>
+            <Link to="support">Support Center</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
             <Link to="/">Privacy Policy</Link>

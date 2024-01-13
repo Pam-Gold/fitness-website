@@ -26,7 +26,7 @@ const Programs = () => {
       <Heading>Explore Life Changing Programs</Heading>
       <Text>
         Embark on a transformative fitness journey with our comprehensive
-        programs designed to elevate your health and well-being
+        programs designed to elevate your health and well-being.
       </Text>
       </Flex>
       

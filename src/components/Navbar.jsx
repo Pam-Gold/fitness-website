@@ -61,6 +61,10 @@ const Navbar = () => {
     fontWeight: "bold",
   };
 
+
+
+
+
   // Navbar Toggle
 
   const [navbarToggle, renderNavbar] = useToggle();
@@ -130,6 +134,37 @@ const Navbar = () => {
     }
   };
 
+  const hamburgerStyles1 = {
+    h: "5px",
+    w: "100%",
+    bg: "black",
+    borderRadius: "10px",
+    transform:!navbarToggle? "rotate(0deg) translate(0, 0)" :"rotate(-45deg) translate(-4px, 7px)" ,
+    transition:"0.4s ease"
+  
+  };
+
+  const hamburgerStyles2 = {
+    h: "5px",
+    w: "100%",
+    bg: "black",
+    borderRadius: "10px",
+    opacity: !navbarToggle? 1 : 0,
+    transition:"0.4s ease"
+  
+  };
+
+  const hamburgerStyles3 = {
+    h: "5px",
+    w: "100%",
+    bg: "black",
+    borderRadius: "10px",
+    transform:!navbarToggle? "rotate(0deg) translate(0, 0)" :"rotate(45deg) translate(-7px, -10.5px)" ,
+    transition:"0.4s ease"
+  
+  
+  };
+
   return (
     <Flex
       h="50px"
@@ -186,34 +221,15 @@ const Navbar = () => {
               Membership
             </NavLink>
           </ListItem>
+     
           <ListItem sx={navbarMenuStyles}>
-            <NavLink to="testimonials" onClick={renderNavbar}>
-              Testimonials
+            <NavLink to="contact" onClick={renderNavbar}>
+              Contact
             </NavLink>
           </ListItem>
         </List>
 
-        <Flex align="center" columnGap="20px">
-          {!user[0].account && (
-            <Button
-              onClick={renderForm}
-              bg="transparent"
-              border="2px solid white"
-              color="white"
-            >
-              Sign In
-            </Button>
-          )}
-
-          {user[0].account && (
-            <Link to="account">
-              <Flex h="40px" w="40px">
-                <Img src={user[0].img} h="100%" w="100%"  borderRadius="50%"/>
-              </Flex>
-            </Link>
-          )}
-
-          <Flex
+        <Flex
             h="25px"
             w="30px"
             flexDirection="column"
@@ -229,138 +245,14 @@ const Navbar = () => {
             className="hamburgerMenu"
             onClick={renderNavbar}
           >
-            <Box className="bar1"></Box>
-            <Box className="bar2"></Box>
-            <Box className="bar3"></Box>
+            <Box sx={hamburgerStyles1}></Box>
+            <Box sx={hamburgerStyles2}></Box>
+            <Box sx={hamburgerStyles3}></Box>
           </Flex>
+
+      
         </Flex>
-      </Flex>
-
-      {formToggle && (
-        <Flex
-          pos="fixed"
-          top="0px"
-          left="0px"
-          right="0px"
-          bottom="0px"
-          bg="black"
-          zIndex="99"
-        >
-          <Flex h="100%" w="100%" justify="center" align="center">
-            <Button onClick={renderForm} pos="absolute" top="15px" right="15px">
-              <i
-                className="fa-solid fa-close"
-                style={{ fontSize: "1.4rem" }}
-              ></i>
-            </Button>
-
-            {switchForm && (
-              <form
-                action=""
-                className="form form-signin"
-                onSubmit={handleSignIn}
-              >
-                <Heading>Welcome Back</Heading>
-                <Input
-                  type="text"
-                  h="50px"
-                  placeholder="Email"
-                  name="email"
-                  onChange={handleSignInChanges}
-                  value={user[0].email}
-                />
-                <Input
-                  type="text"
-                  h="50px"
-                  placeholder="Password"
-                  name="password"
-                  onChange={handleSignInChanges}
-                  value={user[0].password}
-                />
-                <Button
-                  bg="red.400"
-                  h="50px"
-                  fontSize="1.2rem"
-                  fontWeight="bold"
-                  w="100%"
-                  type="submit"
-                >
-                  Sign In
-                </Button>
-                <Text fontWeight="bold">
-                  Don't have an account ?{" "}
-                  <Button
-                    onClick={toggleFormSwitch}
-                    bg="transparent"
-                    border="none"
-                    padding="0"
-                    color="grey"
-                  >
-                    Sign Up
-                  </Button>{" "}
-                </Text>
-              </form>
-            )}
-            {/*  */}
-            {!switchForm && (
-              <form
-                action=""
-                className="form form-signup"
-                onSubmit={handleSignUp}
-              >
-                <Heading>Create Account</Heading>
-                <Input
-                  type="text"
-                  h="50px"
-                  placeholder="Username"
-                  name="userName"
-                  onChange={handleSignUpChanges}
-                  value={user[0].userName}
-                />
-                <Input
-                  type="text"
-                  h="50px"
-                  placeholder="Email"
-                  name="email"
-                  onChange={handleSignUpChanges}
-                  value={user[0].email}
-                />
-                <Input
-                  type="text"
-                  h="50px"
-                  placeholder="Password"
-                  name="password"
-                  onChange={handleSignUpChanges}
-                  value={user[0].password}
-                />
-                <Button
-                  bg="red.400"
-                  h="50px"
-                  fontSize="1.2rem"
-                  fontWeight="bold"
-                  w="100%"
-                  type="submit"
-                >
-                  Sign Up
-                </Button>
-
-                <Text fontWeight="bold">
-                  Already have an account ?{" "}
-                  <Button
-                    onClick={toggleFormSwitch}
-                    bg="transparent"
-                    border="none"
-                    padding="0"
-                    color="grey"
-                  >
-                    Sign In
-                  </Button>{" "}
-                </Text>
-              </form>
-            )}
-          </Flex>
-        </Flex>
-      )}
+      
     </Flex>
   );
 };

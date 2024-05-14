@@ -1,18 +1,20 @@
 import { Heading,Grid, Flex, Box, Img, Text, Button, List, ListItem } from "@chakra-ui/react"
 import UserProfile from "../context/UserProfile";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 
 
 
 import background from '../assets/images/home-section/header5.webp'
 
-import caloriesIcon from '../assets/images/home-section/calories.png'
 
 import joinUsBackground from '../assets/images/home-section/joinUs.webp'
 
 import whyUsBackground from '../assets/images/home-section/header2.webp'
 
-import program from "../data/program";
+
+import Video from "../components/Video";
+
+import program from "../data/featuredPrograms";
 
 import ProgramCard from "../components/ProgramCard";
 
@@ -21,6 +23,7 @@ import reviewDb from "../data/reviewDb";
 import Review from "../components/Review";
 
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -78,6 +81,23 @@ const Home = () => {
     bg: "red.400",
   };
 
+  const sponsorTileStyles = {
+    bg:"white",
+    color:"black",
+    p:"6px 10px",
+    borderRadius:"5px",
+    fontWeight:"bold"
+  }
+
+  const [videoModal, setVideoModal] = useState(false);
+
+const openVideo = () => {
+  setVideoModal(true)
+}
+
+const closeVideo = () => {
+  setVideoModal(false)
+}
 
   return(
  <Grid gridTemplateColumns="1fr" gridTemplateRows={{base:"800px 200px 800px ", sm:"900px 200px 600px",md:"900px 300px 700px", lg:"600px 150px 600px", xl:"600px 150px 500px"}}>
@@ -91,6 +111,7 @@ const Home = () => {
       lg: "row",
       xl: "row",
     }}
+    pos="relative"
 >
 <Flex
           h={{ base: "50%", sm: "50%", md: "50%", lg: "100%", xl: "100%" }}
@@ -104,7 +125,7 @@ const Home = () => {
           rowGap="25px"
         >
 
-<Heading color="white" fontSize={{base:"1.8rem", sm:"2rem", md:"2.1rem", lg:"2.5rem", xl:"3.2rem"}}>Have a Fit and Healthy Body with  <span style={{ color: "lightcoral" }}>Bulck...</span></Heading>
+<Heading color="white" fontFamily=" Poppins" fontSize={{base:"1.8rem", sm:"2rem", md:"2.1rem", lg:"2.5rem", xl:"3.2rem"}}>Have a Fit and Healthy Body with  <span style={{ color: "lightcoral", fontStyle:"oblique" }}>Bulck...</span></Heading>
 
 <Text color="grey" fontSize={{base:"14px", sm:"16px", md:"16px", lg:"18px", xl:"18px"}}>
 We are here to help and guide you to make the best decision for your
@@ -118,7 +139,8 @@ We are here to help and guide you to make the best decision for your
             mb="35px"
           >
             <Button  fontSize={{base:"14px", sm:"14px", md:"1.1rem", lg:"1.3rem", xl:"1.3rem"}}>
-              Get Started
+              <Link to="membership">Get Started</Link>
+           
             </Button>
 
             <Button
@@ -126,6 +148,9 @@ We are here to help and guide you to make the best decision for your
               bg="transparent"
               color="lightgrey"
               fontSize={{base:"14px", sm:"14px", md:"1.1rem", lg:"1.3rem", xl:"1.3rem"}}
+
+              _hover={{bg:"transparent"}}
+              onClick={openVideo}
           
             >
               {" "}
@@ -162,57 +187,7 @@ We are here to help and guide you to make the best decision for your
         >
           <Img h="90%" w="90%" src={background} borderRadius="15px" />
 
-          <Box
-            h={{
-              base: "100px",
-              sm: "100px",
-              md: "100px",
-              lg: "120px",
-              xl: "120px",
-            }}
-            w="200px"
-            position="absolute"
-            display="flex"
-            alignItems="center"
-            bg="white"
-            borderRadius="10px"
-            padding="10px"
-            columnGap="8px"
-            bottom="100px"
-            left="80px"
-            boxShadow="4px 4px 4px 4px rgba(0, 0, 0, 0.432)"
-          >
-            <Flex flexDirection="column">
-              <Text
-                as="h5"
-                fontSize={{
-                  base: "12px",
-                  sm: "14px",
-                  md: "1rem",
-                  lg: "1rem",
-                  xl: "1rem",
-                }}
-              >
-                Todays Calories
-              </Text>
-              <Heading
-                fontSize={{
-                  base: "1.1rem",
-                  sm: "1.2rem",
-                  md: "1.2rem",
-                  lg: "1.4rem",
-                  xl: "1.4rem",
-                }}
-              >
-                130 Cal
-              </Heading>
-            </Flex>
-              <Flex justify="center" alignItems="center">
-              <Img src={caloriesIcon} h="50px" w="50px" bg="white" />
-            </Flex>
-
-            
-            </Box>
+       
             </Box>
             </Flex>
             
@@ -256,9 +231,9 @@ We are here to help and guide you to make the best decision for your
           </Text>
         </Box>
         <Flex alignItems="center" justifyContent="center" columnGap="10px">
-          <Box>Sponsor 1</Box>
-          <Box>Sponsor 2</Box>
-          <Box>Sponsor 3</Box>
+          <Box sx={sponsorTileStyles}> Sponsor 1</Box>
+          <Box sx={sponsorTileStyles}> Sponsor 2</Box>
+          <Box sx={sponsorTileStyles}> Sponsor 3</Box>
         </Flex>
       </Flex>
 
@@ -492,7 +467,7 @@ We are here to help and guide you to make the best decision for your
                 <i className="fa-solid fa-close"></i> Fitness ebook
               </ListItem>
             </List>
-            <Button sx={planButtonStyle}>Choose Plan</Button>
+            <Button onClick={()=>user[1](prev=>({...prev, plan:"Basic"}))} sx={planButtonStyle}><Link to="membership">Choose Plan</Link></Button>
           </Flex>
           {/*  */}
           <Flex sx={planStyle}>
@@ -514,7 +489,7 @@ We are here to help and guide you to make the best decision for your
                 <i className="fa-solid fa-close"></i> Fitness ebook
               </ListItem>
             </List>
-            <Button sx={planButtonStyle}>Choose Plan</Button>
+            <Button onClick={()=>user[1](prev=>({...prev, plan:"Professional"}))} sx={planButtonStyle}><Link to="membership">Choose Plan</Link></Button>
           </Flex>
           {/*  */}
           <Flex sx={planStyle}>
@@ -539,7 +514,7 @@ We are here to help and guide you to make the best decision for your
                 <i className="fa-solid fa-check"></i> Extra fitness training
               </ListItem>
             </List>
-            <Button sx={planButtonStyle}>Choose Plan</Button>
+            <Button onClick={()=>user[1](prev=>({...prev, plan:"Enterprise"}))} sx={planButtonStyle}><Link to="membership">Choose Plan</Link></Button>
           </Flex>
         </Flex>
       </Flex>
@@ -592,7 +567,7 @@ We are here to help and guide you to make the best decision for your
       </Flex>
 
 <Footer/>
-
+{videoModal && <Video closeVideo={closeVideo} />}
  </Grid>
   )
 }

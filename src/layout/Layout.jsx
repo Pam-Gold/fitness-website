@@ -16,7 +16,9 @@ const [user, setUser] = useState({
   password:"",
   img:"",
   toggle:false,
-  account:false
+  account:false,
+  plan:"Free",
+  duration:"30days"
 
 })
 

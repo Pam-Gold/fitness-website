@@ -51,7 +51,7 @@ const Footer = () => {
             <Link to="aboutus">About Us</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
-            <Link to="p</ListItem>rograms">Programs</Link>
+            <Link to="programs">Programs</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
             <Link to="membership">Membership</Link>
@@ -67,16 +67,16 @@ const Footer = () => {
           </Heading>
           <ListItem sx={footerLinkStyles}>
             {" "}
-            <Link to="basic-yoga">Basic Yoga</Link>
+            <Link to="/basic-yoga">Basic Yoga</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
-            <Link to="strength-training">Strength Training</Link>
+            <Link to="/strength-training">Strength Training</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
-            <Link to="body-building">Body Building</Link>
+            <Link to="/body-building">Body Building</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
-            <Link to="weight-loss">Weight Loss</Link>
+            <Link to="/weight-loss">Weight Loss</Link>
           </ListItem>
         </List>
 
@@ -86,17 +86,15 @@ const Footer = () => {
           <Heading color="white" sx={footerTitleStyles}>
             Help
           </Heading>
+       
           <ListItem sx={footerLinkStyles}>
-            <Link to="account">Account</Link>
+            <Link to="support">Support Center</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
-            <Link to="">Support Center</Link>
+            <Link to="/">Privacy Policy</Link>
           </ListItem>
           <ListItem sx={footerLinkStyles}>
-            <Link to="">Privacy Policy</Link>
-          </ListItem>
-          <ListItem sx={footerLinkStyles}>
-            <Link to="">Terms & Conditions</Link>
+            <Link to="/">Terms & Conditions</Link>
           </ListItem>
         </List>
 
